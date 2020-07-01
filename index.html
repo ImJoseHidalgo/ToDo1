@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Firebase CRUD</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/pulse/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container p-4">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <form id="task-form">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="task-title"
+                    class="form-control"
+                    placeholder="Task Title"
+                    autofocus
+                  />
+                </div>
+                <div class="form-group">
+                  <textarea
+                    id="task-description"
+                    rows="3"
+                    class="form-control"
+                    placeholder="Task Description"
+                  ></textarea>
+                </div>
+                <button class="btn btn-primary" id="btn-task-form">
+                  save
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6" id="tasks-container"></div>
+      </div>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDO6tbMB5q6ALzZtUIa8uoUvevCq7Q4h4M",
+        authDomain: "to-do-list-demo-30945.firebaseapp.com",
+        databaseURL: "https://to-do-list-demo-30945.firebaseio.com",
+        projectId: "to-do-list-demo-30945",
+        storageBucket: "to-do-list-demo-30945.appspot.com",
+        messagingSenderId: "572985758310",
+        appId: "1:572985758310:web:5d0b00754dff4c5e9613a7",
+        measurementId: "G-9TX7T7D1B9",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+    <script src="index.js"></script>
+  </body>
+</html>
