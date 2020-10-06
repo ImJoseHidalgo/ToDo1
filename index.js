@@ -33,12 +33,12 @@ window.addEventListener("DOMContentLoaded", async (e) => {
       task.id = doc.id;
       //   console.log(task);
 
-      taskContainer.innerHTML += `<div class="card card-body mt-2 border-primary">
+      taskContainer.innerHTML += `<div class="form">
         <h5>${task.title}</h5>
         <p>${task.description}</p>
         <div>
-            <button class="btn btn-primary btn-delete" data-id="${task.id}">Delete</button>
-            <button class="btn btn-secondary btn-edit" data-id="${task.id}">Edit</button>
+            <button class="" data-id="${task.id}">Delete</button>
+            <button class="" data-id="${task.id}">Edit</button>
         </div>
         </>`;
 

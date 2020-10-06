@@ -4,46 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Firebase CRUD</title>
-    <link
+    /
+    <!-- <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/pulse/bootstrap.min.css"
-    />
+    /> -->
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <div class="container p-4">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="card">
-            <div class="card-body">
-              <form id="task-form">
-                <div class="form-group">
-                  <input
-                    type="text"
-                    id="task-title"
-                    class="form-control"
-                    placeholder="Task Title"
-                    autofocus
-                  />
-                </div>
-                <div class="form-group">
-                  <textarea
-                    id="task-description"
-                    rows="3"
-                    class="form-control"
-                    placeholder="Task Description"
-                  ></textarea>
-                </div>
-                <button class="btn btn-primary" id="btn-task-form">
-                  save
-                </button>
-              </form>
+    <header>
+      <h1>Notas Padre</h1>
+    </header>
+    <main>
+      <div class="container">
+        <div class="form">
+          <form id="task-form">
+            <div class="">
+              <input
+                type="text"
+                id="task-title"
+                placeholder="Task Title"
+                autofocus
+              />
             </div>
-          </div>
+            <div class="form-group">
+              <textarea
+                id="task-description"
+                rows="3"
+                placeholder="Task Description"
+              ></textarea>
+            </div>
+            <button id="btn-task-form">save</button>
+          </form>
         </div>
 
-        <div class="col-md-6" id="tasks-container"></div>
+        <div class="notes" id="tasks-container"></div>
       </div>
-    </div>
+    </main>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
