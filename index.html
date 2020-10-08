@@ -14,11 +14,12 @@
       <div class="container">
         <div class="form">
           <form id="task-form">
+            <h2>No olvides poner un Titulo descriptivo</h2>
             <div class="">
               <input
                 type="text"
                 id="task-title"
-                placeholder="    Task Title"
+                placeholder="    Titulo"
                 autofocus
               />
             </div>
@@ -26,10 +27,10 @@
               <textarea
                 id="task-description"
                 rows="3"
-                placeholder="    Task Description"
+                placeholder="    Descripción"
               ></textarea>
             </div>
-            <button id="btn-task-form">save</button>
+            <button id="btn-task-form">Guardar</button>
           </form>
         </div>
 
@@ -44,7 +45,7 @@
         <img src="img/perfil.svg" alt="profile-buttom" />
       </div>
       <div class="button-footer">
-        <img src="img/mas.svg" alt="profile-buttom" />
+        <img class="plus" src="img/mas.svg" alt="profile-buttom" />
       </div>
       <div class="button-footer">
         <img src="img/luna.svg" alt="profile-buttom" />
@@ -76,5 +77,6 @@
       firebase.analytics();
     </script>
     <script src="index.js"></script>
+    <script src="actions.js"></script>
   </body>
 </html>

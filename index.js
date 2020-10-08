@@ -54,13 +54,15 @@ window.addEventListener("DOMContentLoaded", async (e) => {
         btn.addEventListener("click", async (e) => {
           const doc = await getTask(e.target.dataset.id);
           const task = doc.data();
+          document.querySelector(".form").classList.toggle("active");
+          document.querySelector(".plus").classList.toggle("active");
 
           editStatus = true;
           id = doc.id;
 
           taskForm["task-title"].value = task.title;
           taskForm["task-description"].value = task.description;
-          taskForm["btn-task-form"].innerText = "Update";
+          taskForm["btn-task-form"].innerText = "Actualizar";
         });
       });
     });
@@ -90,5 +92,7 @@ taskForm.addEventListener("submit", async (e) => {
   await getTasks();
 
   taskForm.reset();
-  title.focus();
+  document.querySelector(".form").classList.toggle("active");
+  document.querySelector(".plus").classList.toggle("active");
+  // title.focus();
 });
