@@ -28,6 +28,9 @@ main .container .form {
   height: 100vh;
   background: #f1f5f6;
   transition: 0.5s cubic-bezier(1, 0, 0, 1);
+  display: flex;
+  align-items: center;
+  margin-top: -50px;
 }
 main .container .form.active {
   top: 0;
@@ -37,10 +40,16 @@ main .container .form form {
   width: 80%;
   margin: auto;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #f7fbfc;
+  padding: 8%;
+  border-radius: 20px;
 }
 main .container .form h2 {
   font-size: 20px;
-  margin: 20px 0;
+  margin: 0 0 20px;
 }
 main .container .form input,
 main .container .form textarea {
@@ -48,6 +57,7 @@ main .container .form textarea {
   margin-bottom: 10px;
   border: 1px solid lightgray;
   border-radius: 5px;
+  padding: 10px;
 }
 main .container .form button {
   padding: 10px 30px;
@@ -59,7 +69,7 @@ main .container .form button {
 
 /* NOTES */
 main .notes-title {
-  width: 90%;
+  width: 80%;
   margin: auto;
 }
 main .notes-title h2 {
@@ -91,16 +101,20 @@ main .notes-title h2::after {
 /* NOTES CONTAINER */
 main .container {
   width: 80%;
-  margin: auto;
+  margin: 35px auto 150px;
   height: 100%;
   padding-top: 10px;
-  border-radius: 10px;
+  padding-bottom: 30px;
+  border-radius: 20px;
+  background: #f7fbfc;
 }
 main .container .notes {
   /* padding: 10px;
   background: #f3f1ec; */
-  margin-bottom: 150px;
   border-radius: 10px;
+  width: 90%;
+
+  margin: auto;
 }
 main .container .notes .cards {
   background: #fff;
@@ -154,7 +168,7 @@ footer .button-footer .plus {
   transition: 0.5s;
 }
 footer .button-footer .plus.active {
-  transform: rotate(180deg);
+  transform: rotate(360deg);
 }
 footer .button-footer:nth-child(2) {
   position: relative;
@@ -168,6 +182,9 @@ footer .button-footer:nth-child(2)::before {
   height: 76px;
   background: #f1f5f6;
   border-radius: 50%;
+}
+footer .button-footer:nth-child(3) img {
+  transform: rotate(-35deg);
 }
 @media only screen and (max-width: 320px) {
   main .view {

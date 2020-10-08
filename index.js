@@ -63,6 +63,21 @@ window.addEventListener("DOMContentLoaded", async (e) => {
           taskForm["task-title"].value = task.title;
           taskForm["task-description"].value = task.description;
           taskForm["btn-task-form"].innerText = "Actualizar";
+
+          /* taskForm.innerHTML += 
+          `<button class="btn-cancel"">Cancelar</button>`
+
+          const btnCancel = document.querySelectorAll(".btn-cancel");
+          btnCancel.forEach((btn) => {
+            btn.addEventListener("click", async (e) => {
+              document.querySelector(".form").classList.toggle("active");
+              document.querySelector(".plus").classList.toggle("active");
+              
+              taskForm.reset();
+              
+              editStatus = false;              
+            });
+          }); */
         });
       });
     });
@@ -92,6 +107,7 @@ taskForm.addEventListener("submit", async (e) => {
   await getTasks();
 
   taskForm.reset();
+
   document.querySelector(".form").classList.toggle("active");
   document.querySelector(".plus").classList.toggle("active");
   // title.focus();
