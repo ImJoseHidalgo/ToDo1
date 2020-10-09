@@ -56,6 +56,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
           const task = doc.data();
           document.querySelector(".form").classList.toggle("active");
           document.querySelector(".plus").classList.toggle("active");
+          document.querySelector(".btn-cancel").classList.add("active");
 
           editStatus = true;
           id = doc.id;
@@ -63,21 +64,6 @@ window.addEventListener("DOMContentLoaded", async (e) => {
           taskForm["task-title"].value = task.title;
           taskForm["task-description"].value = task.description;
           taskForm["btn-task-form"].innerText = "Actualizar";
-
-          /* taskForm.innerHTML += 
-          `<button class="btn-cancel"">Cancelar</button>`
-
-          const btnCancel = document.querySelectorAll(".btn-cancel");
-          btnCancel.forEach((btn) => {
-            btn.addEventListener("click", async (e) => {
-              document.querySelector(".form").classList.toggle("active");
-              document.querySelector(".plus").classList.toggle("active");
-              
-              taskForm.reset();
-              
-              editStatus = false;              
-            });
-          }); */
         });
       });
     });
@@ -94,6 +80,8 @@ taskForm.addEventListener("submit", async (e) => {
   if (!editStatus) {
     await saveTask(title.value, description.value);
   } else {
+    document.querySelector(".form").classList.toggle("active");
+    document.querySelector(".plus").classList.toggle("active");
     await updateTask(id, {
       title: title.value,
       description: description.value,
@@ -101,14 +89,25 @@ taskForm.addEventListener("submit", async (e) => {
 
     editStatus = false;
 
-    taskForm["btn-task-form"].innerText = "Save";
+    taskForm["btn-task-form"].innerText = "Guardar";
   }
 
   await getTasks();
 
   taskForm.reset();
 
+  document.querySelector(".btn-cancel").classList.remove("active");
+  // title.focus();
+});
+
+/* Edit Section */
+document.querySelector(".btn-cancel").addEventListener("click", () => {
   document.querySelector(".form").classList.toggle("active");
   document.querySelector(".plus").classList.toggle("active");
-  // title.focus();
+  setTimeout(function () {
+    document.querySelector(".btn-cancel").classList.remove("active");
+    taskForm["btn-task-form"].innerText = "Guardar";
+    editStatus = false;
+    taskForm.reset();
+  }, 1000);
 });
