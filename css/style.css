@@ -18,6 +18,9 @@
 .dark img {
   filter: invert(1);
 }
+.light img {
+  filter: invert(0);
+}
 .dark {
   --background: #000000;
   --backgroundForm: #0c0f14;
