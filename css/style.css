@@ -6,27 +6,17 @@
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 :root {
-  --background: #f1f5f6;
-  --backgroundForm: #f7fbfc;
-  --card: #ffffff;
-  --text: #333536;
-  --border: #d3d3d3;
-}
-:root img {
-  filter: invert(0);
-}
-.dark img {
-  filter: invert(1);
-}
-.light img {
-  filter: invert(0);
-}
-.dark {
   --background: #000000;
   --backgroundForm: #0c0f14;
   --card: #171a1f;
   --text: #e0e2e3;
   --border: #2a2e33;
+}
+:root img {
+  filter: invert(1);
+}
+.light img {
+  filter: invert(0);
 }
 .light {
   --background: #f1f5f6;
@@ -153,8 +143,6 @@ main .container {
   background: var(--backgroundForm);
 }
 main .container .notes {
-  /* padding: 10px;
-  background: #f3f1ec; */
   border-radius: 10px;
   width: 90%;
 
@@ -229,36 +217,7 @@ footer .button-footer:nth-child(2)::before {
 }
 footer .button-footer:nth-child(3) img {
   transform: rotate(20deg);
-}
-:root footer .button-footer:nth-child(3) img {
-  /*transform: scale(1);
-  transition: transform 0.25s;*/
-}
-.dark footer .button-footer:nth-child(3) img {
-  /*transform: scale(0);*/
   filter: invert(0);
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #000000;
-    --backgroundForm: #0c0f14;
-    --card: #171a1f;
-    --text: #e0e2e3;
-    --border: #2a2e33;
-  }
-  .dark {
-    --background: #f1f5f6;
-    --backgroundForm: #f7fbfc;
-    --card: #ffffff;
-    --text: #333536;
-    --border: #d3d3d3;
-  }
-  .dark img {
-    filter: invert(0);
-  }
-  :root img {
-    filter: invert(1);
-  }
 }
 @media only screen and (max-width: 320px) {
 }
