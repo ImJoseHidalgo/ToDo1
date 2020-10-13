@@ -34,13 +34,26 @@ window.addEventListener("DOMContentLoaded", async (e) => {
       //   console.log(task);
 
       taskContainer.innerHTML += `<div class="cards">
-        <h5>${task.title}</h5>
-        <p>${task.description}</p>
-        <div class="cards-button">
-            <button class="btn-delete" data-id="${task.id}">Delete</button>
-            <button class="btn-edit" data-id="${task.id}">Edit</button>
-        </div>
+        <div class="title-open">${task.title}</div>
+        <div class="description-container">
+          <p>${task.description}</p>
+          <div class="cards-button">
+              
+              <img class="btn-delete" data-id="${task.id}" src="./img/eliminar.svg" />
+              <img class="btn-edit" data-id="${task.id}" src="./img/edit.svg" />
+          </div>
+        </div>  
         </>`;
+        /*<button class="btn-delete" data-id="${task.id}">Delete</button>
+              <button class="btn-edit" data-id="${task.id}">Edit</button>*/
+
+        const accordion = document.getElementsByClassName("cards");
+        for (i = 0; i < accordion.length; i++) {
+          accordion[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+          });
+        }
+
 
       const btnsDelete = document.querySelectorAll(".btn-delete");
       btnsDelete.forEach((btn) => {
@@ -78,6 +91,8 @@ taskForm.addEventListener("submit", async (e) => {
   const description = taskForm["task-description"];
 
   if (!editStatus) {
+    document.querySelector(".form").classList.toggle("active");
+    document.querySelector(".plus").classList.toggle("active");
     await saveTask(title.value, description.value);
   } else {
     document.querySelector(".form").classList.toggle("active");
@@ -93,8 +108,10 @@ taskForm.addEventListener("submit", async (e) => {
   }
 
   await getTasks();
-
-  taskForm.reset();
+  
+  setTimeout(function () {
+    taskForm.reset();
+  }, 1000);
 
   document.querySelector(".btn-cancel").classList.remove("active");
   // title.focus();
@@ -111,3 +128,4 @@ document.querySelector(".btn-cancel").addEventListener("click", () => {
     taskForm.reset();
   }, 1000);
 });
+
