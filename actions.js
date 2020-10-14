@@ -18,3 +18,7 @@ document.querySelector(".dark-mode").addEventListener("click", () => {
     isDark = true;
   }
 });
+
+
+console.log('%cHola! 👋', 'font-size:24px;');
+console.log('%cVeo que estas interesado en ver el codigo del sitio. Puedes ver el repo aqui: https://github.com/imjosehidalgo/practicas', 'font-size:20px');

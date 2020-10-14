@@ -38,14 +38,11 @@ window.addEventListener("DOMContentLoaded", async (e) => {
         <div class="description-container">
           <p>${task.description}</p>
           <div class="cards-button">
-              
               <img class="btn-delete" data-id="${task.id}" src="./img/eliminar.svg" />
               <img class="btn-edit" data-id="${task.id}" src="./img/edit.svg" />
           </div>
         </div>  
         </>`;
-        /*<button class="btn-delete" data-id="${task.id}">Delete</button>
-              <button class="btn-edit" data-id="${task.id}">Edit</button>*/
 
         const accordion = document.getElementsByClassName("cards");
         for (i = 0; i < accordion.length; i++) {
